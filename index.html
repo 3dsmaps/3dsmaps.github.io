@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Open-vocabulary Mobile Manipulation (OVMM) in Unseen Dynamic Environments with 3D Semantic Maps (3DSMaps) leverages LLMs and VLMs for robots to understand spatial structure and semantics for open navigation and manipulation.">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Open-vocabulary Mobile Manipulation in Unseen Dynamic Environments with 3D Semantic Maps</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WP3NCWJKW2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WP3NCWJKW2');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://davidqiu.com">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://davidqiu1993.github.io/poddp-paper/" target="_blank">
+            PODDP
+          </a>
+          <a class="navbar-item" href="https://ieeexplore.ieee.org/document/9172271" target="_blank">
+            MAARS
+          </a>
+          <a class="navbar-item" href="https://www.sciencedirect.com/science/article/pii/S0032063319301242" target="_blank">
+            SCOTI
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Open-vocabulary Mobile Manipulation in Unseen Dynamic Environments with 3D Semantic Maps</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://davidqiu.com" target="_blank">Dicong Qiu<sup>&#9671;</sup></a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="#">Wenzong Ma<sup>&#9671;</sup></a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://jacobi.ai" target="_blank">Zhenfu Pan</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://facultyprofiles.hkust-gz.edu.cn/faculty-personal-page/XIONG-Hui/xionghui" target="_blank">Hui Xiong*</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://junweiliang.me" target="_blank">Junwei Liang*</a><sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>HKUST (Guangzhou)</span> 
+            <span class="author-block"><sup>2</sup>Jacobi.ai</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <p><sup>&#9671;</sup>Equal Contribution, *Corresponding Authors</p>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="static/files/paper.pdf" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!--
+              <span class="link-block">
+                <a href="#" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              -->
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://youtu.be/xE6M6WKw-0k" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <!--
+              <span class="link-block">
+                <a href="#" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              -->
+              <!-- Dataset Link. -->
+              <!--
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                </a>
+              </span>
+              -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Paper video. -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <!-- <h2 class="title is-3">Video</h2> -->
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/xE6M6WKw-0k?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--/ Paper video. -->
+
+
+<!-- Abstract. -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Open-Vocabulary Mobile Manipulation (OVMM) is a crucial capability for autonomous robots, especially when faced with the challenges posed by unknown and dynamic environments. This task requires robots to explore and build a semantic understanding of their surroundings, generate feasible plans to achieve manipulation goals, adapt to environmental changes, and comprehend natural language instructions from humans. 
+            To address these challenges, we propose a novel framework that leverages the zero-shot detection and grounded recognition capabilities of pretraining visual-language models (VLMs) combined with dense 3D entity reconstruction to build 3D semantic maps. Additionally, we utilize large language models (LLMs) for spatial region abstraction and online planning, incorporating human instructions and spatial semantic context.
+          </p>
+          <p>
+            We have built a 10-DoF mobile manipulation robotic platform JSR-1 and demonstrated in real-world robot experiments that our proposed framework can effectively capture spatial semantics and process natural language user instructions for zero-shot OVMM tasks under dynamic environment settings. Furthermore, the framework is capable of replanning towards the next most probable candidate location based on the spatial semantic context derived from the 3D semantic map when initial plans fail.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--/ Abstract. -->
+
+
+<!-- Two-stage Framework. -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Two-stage Framework</h2>
+
+    <!-- Illustration -->
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content">
+          <div>
+            <img src="static/images/framework.png" alt="Two-stage Framework">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ Illustration -->
+
+    <!-- Explanation. -->
+    <div class="columns is-centered">
+      <!-- 3D Semantic Mapping. -->
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-4">3D Semantic Mapping</h2>
+          <p>
+            A 3-layer structured <i>3DSMap</i> is built at the 3D semantic mapping stage, by leveraging heuristic exploration and feature-based SLAM to build the <i>structural layer</i>, using pre-trained VLMs and LLMs to extract instances from and propose region divisions for an environment to build the <i>instance semantic layer</i> and the <i>abstract region semantic layer</i>, respectively.
+          </p>
+        </div>
+      </div>
+      <!--/ 3D Semantic Mapping. -->
+      <!-- Semantics-aware OVMM. -->
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-4">Semantics-aware OVMM</h2>
+          <p>
+            At the semantics-aware OVMM stage, a robot takes both region semantics from <i>3DSMap</i> and user instructions as context to prioritize regions to search with LLMs and fetch the target object for the user.
+          </p>
+        </div>
+      </div>
+      <!--/ Semantics-aware OVMM. -->
+    </div>
+    <!--/ Explanation. -->
+
+  </div>
+</section>
+<!--/ Two-stage Framework. -->
+
+
+<!-- Experiment -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Robot Experiment</h2>
+
+    <h3 class="title is-4">Illustration</h3>
+
+    <!-- Illustration -->
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content">
+          <div>
+            <img src="static/images/experiment_illustration.png" alt="Real-world Robot Experiment">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ Illustration -->
+
+    <!-- Explanation. -->
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content">
+          <p>
+            An illustration of our real-world experiment on OVMM with the <i>JSR-1</i> robot platform we built.
+          
+            (a) A sample run in our experiment. The robot receives a misleading instruction "<b>fetch the controller from the washing area</b>" from the user. Obeying the instruction given by the user, it prioritizes the "<b>washing area</b>" as the first region to search, where it fails to to find the target object. "<b>entertainment area</b>" follows as the next most relevant semantic region, where the robot successfully finds the target object, picks it up and then returns to the user.
+          
+            (b) The 5 regions in our experiment scene setup with 20 different categories of objects scattered within them conforming commonsense in daily life.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Explanation. -->
+
+    <h3 class="title is-4">Results</h3>
+
+    <!-- Results -->
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content">
+          <div>
+            <img src="static/images/experiment_results.png" alt="Real-world Robot Experiment">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ Results -->
+
+    <!-- Description. -->
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content">
+          <p>
+            We have built a 10-DoF mobile manipulation robotic platform JSR-1 and demonstrated in real-world robot experiments that our proposed framework can effectively capture spatial semantics and process natural language user instructions for zero-shot OVMM tasks under dynamic environment settings, with an overall navigation and task success rate of 80.95% and 73.33% over 105 episodes, and better SFT and SPL by 157.18% and 19.53% respectively compared to the baseline. Furthermore, the framework is capable of replanning towards the next most probable candidate location based on the spatial semantic context derived from the 3D semantic map when initial plans fail, keeping an average success rate of 76.67%.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Description. -->
+
+  </div>
+</section>
+<!--/ Experiment -->
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@misc{qiu2024ovmm,
+  title={Open-vocabulary Mobile Manipulation in Unseen Dynamic Environments with 3D Semantic Maps},
+  author={Dicong Qiu and Wenzong Ma and Zhenfu Pan and Hui Xiong and Junwei Liang},
+  year={2024}
+}</code></pre>
+</div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a href="https://www.hkust-gz.edu.cn/" target="_blank">
+        <img src="static/images/logo_hkustgz.png" alt="HKUST(GZ)" style="height:50px; margin:20px;">
+      </a>
+      <a href="https://jacobi.ai/" target="_blank">
+        <img src="static/images/logo_jacobi.png" alt="Jacobi.ai" style="height:50px; margin:20px;">
+      </a>
+    </div>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            Website is built with <a href="https://github.com/nerfies/nerfies.github.io">this template</a>.
+          </p>
+          <p>
+            Copyright (C) 2024, Dicong Qiu. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
