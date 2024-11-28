@@ -1,6 +1,6 @@
 # 3DSMaps Homepage
 
-This is the repository that contains source code for the [3DSMaps homepage](https://davidqiu1993.github.io/3dsmaps).
+This is the repository that contains source code for the [3DSMaps Homepage](https://3dsmaps.github.io).
 
 
 ## Citation
